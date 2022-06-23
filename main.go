@@ -52,7 +52,11 @@ func search(query string) []*turtle.Emoji {
 		return e.Name != query && strings.HasPrefix(e.Name, query)
 	})
 
-	nameMatches := lo.Flatten([][]*turtle.Emoji{nameExactMatches, namePrefixMatches})
+	nameContainMatches := turtle.Filter(func(e *turtle.Emoji) bool {
+		return e.Name != query && strings.Contains(e.Name, query)
+	})
+
+	nameMatches := lo.Flatten([][]*turtle.Emoji{nameExactMatches, namePrefixMatches, nameContainMatches})
 
 	sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &nameMatches})
 
@@ -90,6 +94,6 @@ func search(query string) []*turtle.Emoji {
 		categoryMatches,
 	}
 
-	consolidated := lo.Flatten(results)
+	consolidated := lo.Uniq(lo.Flatten(results))
 	return consolidated
 }
