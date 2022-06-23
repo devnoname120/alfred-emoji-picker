@@ -6,9 +6,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/devnoname120/alfred-emoji-picker/scoring"
-
 	"github.com/deanishe/awgo"
+	"github.com/devnoname120/alfred-emoji-picker/scoring"
 	"github.com/hackebrot/turtle"
 	"github.com/samber/lo"
 )
@@ -39,6 +38,7 @@ func main() {
 	wf.Run(run)
 }
 
+// FIXME: `che` doesn't return the checkbox in Alfred
 func search(query string) []*turtle.Emoji {
 	if query == "" {
 		return make([]*turtle.Emoji, 0)
@@ -54,7 +54,7 @@ func search(query string) []*turtle.Emoji {
 
 	nameMatches := lo.Flatten([][]*turtle.Emoji{nameExactMatches, namePrefixMatches})
 
-	sort.Stable(SortedByScoreDsc{query: query, emojis: &nameMatches})
+	sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &nameMatches})
 
 	keywordExactMatches := turtle.Filter(func(e *turtle.Emoji) bool {
 		for _, keyword := range e.Keywords {
@@ -92,23 +92,4 @@ func search(query string) []*turtle.Emoji {
 
 	consolidated := lo.Flatten(results)
 	return consolidated
-}
-
-type SortedByScoreDsc struct {
-	query  string
-	emojis *[]*turtle.Emoji
-}
-
-func (s SortedByScoreDsc) Len() int {
-	return len(*s.emojis)
-}
-
-func (s SortedByScoreDsc) Less(i, j int) bool {
-	// Less = position in the list.
-	// For us high score = left on the left, so we return true when score is higher
-	return scoring.IsScoredHigher(s.query, (*s.emojis)[i], (*s.emojis)[j])
-}
-
-func (s SortedByScoreDsc) Swap(i, j int) {
-	(*s.emojis)[i], (*s.emojis)[j] = (*s.emojis)[j], (*s.emojis)[i]
 }
