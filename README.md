@@ -28,7 +28,7 @@ Copy the executable in the Alfred workflow directory and export the new workflow
 
 - [x] Restore clipboard after pasting emoji
 - [ ] Support for multiple words fuzzy search
-- [ ] Add scoring on results (exact match > partial match at beginning > partial match > keywords, categories, etc…)
+- [x] Add scoring on results (exact match > partial match at beginning > partial match > keywords, categories, etc…)
 - [ ] Add a script to scrap https://emojis.wiki/apple/ to regenerate the emoji images
 - [x] Support for auto-updates
-- [ ] Support for skin tones
+- [ ] Support for skin tones (note: `Turtle` doesn't support them)
