@@ -21,6 +21,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/deanishe/awgo v0.29.1 h1:yKAyy0e+HR60iPxaKHhY3hdTM5GCsECpWTP79j04bHg=
 github.com/deanishe/awgo v0.29.1/go.mod h1:1yGF+uQfWXX99TiDfAYYKjJpHTq5lHEmvHFEVCHo6KA=
+github.com/devnoname120/turtle v0.2.2 h1:G53aovo9lrGe+JRrZzrtLoQjq0OLd/Neeu1kKJ614LU=
+github.com/devnoname120/turtle v0.2.2/go.mod h1:y5fsZwSVxxeBwQTtIB7za/0Aq99A0K6IFggcM5E8CPI=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/dgryski/go-sip13 v0.0.0-20181026042036-e10d5fee7954/go.mod h1:vAd38F8PWV+bWy6jNmig1y/TA+kYO4g3RSRF0IAv0no=
 github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=
@@ -47,8 +49,6 @@ github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0/go.mod h1:8NvIoxWQoOIhqOTXgf
 github.com/grpc-ecosystem/grpc-gateway v1.9.0/go.mod h1:vNeuVxBJEsws4ogUvrchl83t/GYV9WGTSLVdBhOQFDY=
 github.com/hackebrot/go-repr v0.1.0 h1:28FyOiVx+rHPqEj/nqUbxqs2ocz2hfM9gP01kAeJJoA=
 github.com/hackebrot/go-repr v0.1.0/go.mod h1:5nbEBC4Y57U1dVAlQGF4lQdqAJZAwu7cszx8HtEq8XM=
-github.com/hackebrot/turtle v0.2.0 h1:A9UI5rOu4qNZlF+fN7GVwQIWLOyO+caqa+suaYDtNIs=
-github.com/hackebrot/turtle v0.2.0/go.mod h1:iKsNJuPrVlNAttQofuZ05H4sdR4m5SAAAPGuWsLwqEE=
 github.com/hashicorp/hcl v1.0.0/go.mod h1:E5yfLk+7swimpb2L/Alb/PJmXilQ/rhwaUYs4T20WEQ=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
 github.com/jessevdk/go-flags v1.4.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=

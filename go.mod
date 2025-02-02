@@ -4,11 +4,13 @@ go 1.18
 
 require (
 	github.com/deanishe/awgo v0.29.1
-	github.com/hackebrot/turtle v0.2.0
+	//github.com/devnoname120/turtle v0.2.0
 	github.com/onsi/ginkgo/v2 v2.1.4
 	github.com/onsi/gomega v1.19.0
 	github.com/samber/lo v1.21.0
 )
+
+require github.com/devnoname120/turtle v0.2.2
 
 require (
 	github.com/magefile/mage v1.11.0 // indirect

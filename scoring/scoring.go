@@ -3,7 +3,7 @@ package scoring
 import (
 	"strings"
 
-	"github.com/hackebrot/turtle"
+	"github.com/devnoname120/turtle"
 )
 
 func IsScoredHigher(query string, emojiLeft *turtle.Emoji, emojiRight *turtle.Emoji) bool {

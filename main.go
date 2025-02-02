@@ -8,7 +8,7 @@ import (
 
 	"github.com/deanishe/awgo"
 	"github.com/devnoname120/alfred-emoji-picker/scoring"
-	"github.com/hackebrot/turtle"
+	"github.com/devnoname120/turtle"
 	"github.com/samber/lo"
 )
 
