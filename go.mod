@@ -7,7 +7,7 @@ toolchain go1.23.4
 require (
 	github.com/deanishe/awgo v0.29.1
 	github.com/devnoname120/turtle v0.3.0
-	github.com/onsi/ginkgo/v2 v2.22.2
+	github.com/onsi/ginkgo/v2 v2.22.1
 	github.com/onsi/gomega v1.36.2
 	github.com/samber/lo v1.49.1
 )
