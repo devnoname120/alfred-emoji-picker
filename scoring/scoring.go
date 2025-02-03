@@ -14,10 +14,17 @@ func IsScoredHigher(query string, emojiLeft *turtle.Emoji, emojiRight *turtle.Em
 
 func Score(query string, emoji *turtle.Emoji) int {
 	emojiNicknamePriorities := map[string][]string{
-		"rais": {"🙌", "✋", "🤚", "🖐", "🤨"},
+		"rai":  {"🙌", "✋", "🤚", "🖐", "🤨"},
 		"han":  {"✋", "🤚", "🖐", "🤝"},
 		"smil": {"🙂", "😊"},
 		"sli":  {"🙂", "🙁"},
+		"sw":   {"😅", "😰", "😓", "😥", "💦"},
+		"sq":   {"😆", "😝"},
+		"blo":  {"😘"},
+		"dea":  {"💀"},
+		"ey":   {"👀"},
+		"jo":   {"😂", "😹", "🕹️"},
+		"joy":  {"😂", "😹", "🕹️"},
 		"ok":   {"👌", "🆗"},
 		"che":  {"✅", "✔️", "☑️", "🏁", "🏨"},
 		// This doesn't work because this is a keyword, and right now this function only uses names
