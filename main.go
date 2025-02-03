@@ -1,102 +1,102 @@
 package main
 
 import (
-  "fmt"
-  "os"
-  "sort"
-  "strings"
+	"fmt"
+	"os"
+	"sort"
+	"strings"
 
-  "github.com/deanishe/awgo"
-  "github.com/devnoname120/alfred-emoji-picker/scoring"
-  "github.com/devnoname120/turtle"
-  "github.com/samber/lo"
+	"github.com/deanishe/awgo"
+	"github.com/devnoname120/alfred-emoji-picker/scoring"
+	"github.com/devnoname120/turtle"
+	"github.com/samber/lo"
 )
 
 var wf *aw.Workflow
 
 func init() {
-  wf = aw.New()
+	wf = aw.New()
 }
 
 func run() {
-  query := os.Args[1]
-  results := search(query)
+	query := os.Args[1]
+	results := search(query)
 
-  for _, result := range results {
-    wf.NewItem(result.Name).
-      Subtitle(fmt.Sprintf("Input \"%s\" (%s) into foremost application", result.Char, result.Slug)).
-      Arg(result.Char).
-      Icon(&aw.Icon{Value: fmt.Sprintf("emojis/%s.png", result.Slug)}).
-      Valid(true)
-  }
+	for _, result := range results {
+		wf.NewItem(result.Name).
+			Subtitle(fmt.Sprintf("Input \"%s\" (%s) into foremost application", result.Char, result.Slug)).
+			Arg(result.Char).
+			Icon(&aw.Icon{Value: fmt.Sprintf("emojis/%s.png", result.Slug)}).
+			Valid(true)
+	}
 
-  wf.WarnEmpty("No matching emojis", "Try a different query?")
-  wf.SendFeedback()
+	wf.WarnEmpty("No matching emojis", "Try a different query?")
+	wf.SendFeedback()
 }
 
 func main() {
-  wf.Run(run)
+	wf.Run(run)
 }
 
 func search(query string) []*turtle.Emoji {
-  if query == "" {
-    return make([]*turtle.Emoji, 0)
-  }
+	if query == "" {
+		return make([]*turtle.Emoji, 0)
+	}
 
-  nameSlugExactMatches := turtle.Filter(func(e *turtle.Emoji) bool {
-    return e.Name == query || e.Slug == query
-  })
+	nameSlugExactMatches := turtle.Filter(func(e *turtle.Emoji) bool {
+		return e.Name == query || e.Slug == query
+	})
 
-  nameSlugPrefixMatches := turtle.Filter(func(e *turtle.Emoji) bool {
-    return e.Name != query && e.Slug != query && (strings.HasPrefix(e.Name, query) || strings.HasPrefix(e.Slug, query))
-  })
+	nameSlugPrefixMatches := turtle.Filter(func(e *turtle.Emoji) bool {
+		return e.Name != query && e.Slug != query && (strings.HasPrefix(e.Name, query) || strings.HasPrefix(e.Slug, query))
+	})
 
-  nameSlugContainMatches := turtle.Filter(func(e *turtle.Emoji) bool {
-    return e.Name != query && e.Slug != query && !strings.HasPrefix(e.Name, query) && !strings.HasPrefix(e.Slug, query) && (strings.Contains(e.Name, query) || strings.Contains(e.Slug, query))
-  })
+	nameSlugContainMatches := turtle.Filter(func(e *turtle.Emoji) bool {
+		return e.Name != query && e.Slug != query && !strings.HasPrefix(e.Name, query) && !strings.HasPrefix(e.Slug, query) && (strings.Contains(e.Name, query) || strings.Contains(e.Slug, query))
+	})
 
-  nameSlugMatches := lo.Flatten([][]*turtle.Emoji{nameSlugExactMatches, nameSlugPrefixMatches, nameSlugContainMatches})
-  sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &nameSlugMatches})
+	nameSlugMatches := lo.Flatten([][]*turtle.Emoji{nameSlugExactMatches, nameSlugPrefixMatches, nameSlugContainMatches})
+	sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &nameSlugMatches})
 
-  keywordExactMatches := turtle.Filter(func(e *turtle.Emoji) bool {
-    for _, keyword := range e.Keywords {
-      if keyword == query {
-        return true
-      }
-    }
-    return false
-  })
+	keywordExactMatches := turtle.Filter(func(e *turtle.Emoji) bool {
+		for _, keyword := range e.Keywords {
+			if keyword == query {
+				return true
+			}
+		}
+		return false
+	})
 
-  keywordPrefixMatches := turtle.Filter(func(e *turtle.Emoji) bool {
-    for _, keyword := range e.Keywords {
-      if keyword != query && strings.HasPrefix(keyword, query) {
-        return true
-      }
-    }
-    return false
-  })
+	keywordPrefixMatches := turtle.Filter(func(e *turtle.Emoji) bool {
+		for _, keyword := range e.Keywords {
+			if keyword != query && strings.HasPrefix(keyword, query) {
+				return true
+			}
+		}
+		return false
+	})
 
-  keywordMatches := lo.Flatten([][]*turtle.Emoji{keywordExactMatches, keywordPrefixMatches})
-  sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &keywordMatches})
+	keywordMatches := lo.Flatten([][]*turtle.Emoji{keywordExactMatches, keywordPrefixMatches})
+	sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &keywordMatches})
 
-  categoryExactMatches := turtle.Filter(func(e *turtle.Emoji) bool {
-    return e.Category == query
-  })
+	categoryExactMatches := turtle.Filter(func(e *turtle.Emoji) bool {
+		return e.Category == query
+	})
 
-  categoryPrefixMatches := turtle.Filter(func(e *turtle.Emoji) bool {
-    return e.Category != query && strings.HasPrefix(e.Category, query)
-  })
+	categoryPrefixMatches := turtle.Filter(func(e *turtle.Emoji) bool {
+		return e.Category != query && strings.HasPrefix(e.Category, query)
+	})
 
-  sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &nameSlugMatches})
-  sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &keywordMatches})
+	sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &nameSlugMatches})
+	sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &keywordMatches})
 
-  results := [][]*turtle.Emoji{
-    nameSlugMatches,
-    keywordMatches,
-    categoryExactMatches,
-    categoryPrefixMatches,
-  }
+	results := [][]*turtle.Emoji{
+		nameSlugMatches,
+		keywordMatches,
+		categoryExactMatches,
+		categoryPrefixMatches,
+	}
 
-  consolidated := lo.Uniq(lo.Flatten(results))
-  return consolidated
+	consolidated := lo.Uniq(lo.Flatten(results))
+	return consolidated
 }
