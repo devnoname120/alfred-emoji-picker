@@ -98,5 +98,6 @@ func search(query string) []*turtle.Emoji {
 	}
 
 	consolidated := lo.Uniq(lo.Flatten(results))
+	sort.Stable(scoring.SortedByScoreDsc{Query: query, Emojis: &consolidated})
 	return consolidated
 }
