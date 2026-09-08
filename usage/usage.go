@@ -74,7 +74,10 @@ func withStatsLock(update func(string) error) error {
 	if err != nil {
 		return err
 	}
-	defer lock.Close() // Closing the descriptor also releases the flock.
+	defer func() {
+		// Release the flock without replacing the update's result with a cleanup error.
+		_ = lock.Close()
+	}()
 	for {
 		err = syscall.Flock(int(lock.Fd()), syscall.LOCK_EX)
 		if !errors.Is(err, syscall.EINTR) {
@@ -99,8 +102,12 @@ func save(path string, stats Stats) error {
 	if err != nil {
 		return err
 	}
-	defer os.Remove(tmp.Name())
-	defer tmp.Close()
+	defer func() {
+		// Preserve write errors; the successful write path checks Close before rename.
+		_ = tmp.Close()
+		// After a successful rename the temporary path is already gone.
+		_ = os.Remove(tmp.Name())
+	}()
 	if err := tmp.Chmod(0o644); err != nil {
 		return err
 	}

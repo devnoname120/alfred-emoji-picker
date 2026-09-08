@@ -169,7 +169,11 @@ func TestMutationsWaitForSharedProcessLock(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			defer lock.Close()
+			defer func() {
+				if err := lock.Close(); err != nil {
+					t.Errorf("close lock file: %v", err)
+				}
+			}()
 			if err := syscall.Flock(int(lock.Fd()), syscall.LOCK_EX); err != nil {
 				t.Fatal(err)
 			}
