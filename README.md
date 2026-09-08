@@ -31,7 +31,21 @@ The binary now supports a small local usage database in Alfred's workflow data d
 - Empty query shows only emoji the user has actually selected before.
 - The amount shown on empty query is controlled by the Alfred variable `frequent_emoji_limit`.
 - When the query is empty, previously selected emoji are ordered by usage count.
-- You can reset the stored history with `./alfred-emoji-picker --reset-frequent`.
+- Type `reset` in the picker and select **Reset frequent emoji** to clear the history.
+
+To reset history from a terminal, run the binary from the workflow directory and
+set `alfred_workflow_data` to the workflow's data directory:
+
+```shell
+alfred_workflow_data="$HOME/Library/Application Support/Alfred/Workflow Data/com.github.devnoname120.alfred-emoji-picker" \
+  ./alfred-emoji-picker --reset-frequent
+```
+
+Both `--reset-frequent` and `--record EMOJI` use `alfred_workflow_data` and run
+without Alfred's other environment variables. Alfred sets this directory
+automatically when running the workflow. For a custom data location, set the
+variable to that directory. Missing configuration or storage errors are reported
+on stderr with a nonzero exit status.
 
 # Update emojis
 

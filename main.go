@@ -24,16 +24,6 @@ func run() {
 		wf.Fatal("missing query argument")
 	}
 
-	if os.Args[1] == "--record" {
-		recordSelection()
-		return
-	}
-
-	if os.Args[1] == "--reset-frequent" {
-		resetFrequent()
-		return
-	}
-
 	query := os.Args[1]
 	showUsageCount := query == ""
 	stats := usage.Stats{}
@@ -80,6 +70,34 @@ func usageStats() usage.Stats {
 }
 
 func main() {
+	if len(os.Args) > 1 {
+		var err error
+		handled := true
+		switch os.Args[1] {
+		case "--record":
+			if len(os.Args) != 3 {
+				err = fmt.Errorf("usage: alfred-emoji-picker --record EMOJI")
+			} else {
+				err = usage.Increment(os.Args[2])
+			}
+		case "--reset-frequent":
+			if len(os.Args) != 2 {
+				err = fmt.Errorf("usage: alfred-emoji-picker --reset-frequent")
+			} else {
+				err = usage.Reset()
+			}
+		default:
+			handled = false
+		}
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
+		if handled {
+			return
+		}
+	}
+
 	wf = aw.New()
 	wf.Run(run)
 }
@@ -154,22 +172,6 @@ func search(query string, stats usage.Stats) []*turtle.Emoji {
 	}
 
 	return consolidated
-}
-
-func recordSelection() {
-	if len(os.Args) < 3 {
-		wf.Fatal("missing emoji argument for record command")
-	}
-
-	if err := usage.Increment(os.Args[2]); err != nil {
-		wf.FatalError(err)
-	}
-}
-
-func resetFrequent() {
-	if err := usage.Reset(); err != nil {
-		wf.FatalError(err)
-	}
 }
 
 func frequentResults(stats usage.Stats) []*turtle.Emoji {

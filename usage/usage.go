@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"syscall"
 )
 
 const statsFileName = "emoji-usage.json"
@@ -17,7 +18,10 @@ func Load() (Stats, error) {
 	if err != nil {
 		return nil, err
 	}
+	return load(path)
+}
 
+func load(path string) (Stats, error) {
 	data, err := os.ReadFile(path)
 	if errors.Is(err, os.ErrNotExist) {
 		return Stats{}, nil
@@ -30,21 +34,31 @@ func Load() (Stats, error) {
 	if err := json.Unmarshal(data, &stats); err != nil {
 		return nil, err
 	}
+	if stats == nil {
+		stats = Stats{}
+	}
 
 	return stats, nil
 }
 
 func Increment(emojiChar string) error {
-	stats, err := Load()
-	if err != nil {
-		return err
-	}
-
-	stats[NormalizeEmoji(emojiChar)]++
-	return Save(stats)
+	return withStatsLock(func(path string) error {
+		stats, err := load(path)
+		if err != nil {
+			return err
+		}
+		stats[NormalizeEmoji(emojiChar)]++
+		return save(path, stats)
+	})
 }
 
 func Save(stats Stats) error {
+	return withStatsLock(func(path string) error {
+		return save(path, stats)
+	})
+}
+
+func withStatsLock(update func(string) error) error {
 	path, err := statsFilePath()
 	if err != nil {
 		return err
@@ -54,25 +68,58 @@ func Save(stats Stats) error {
 		return err
 	}
 
+	// Keep this file in place: replacing or removing it would let processes
+	// lock different inodes while updating the same stats file.
+	lock, err := os.OpenFile(path+".lock", os.O_CREATE|os.O_RDWR, 0o600)
+	if err != nil {
+		return err
+	}
+	defer lock.Close() // Closing the descriptor also releases the flock.
+	for {
+		err = syscall.Flock(int(lock.Fd()), syscall.LOCK_EX)
+		if !errors.Is(err, syscall.EINTR) {
+			break
+		}
+	}
+	if err != nil {
+		return err
+	}
+	return update(path)
+}
+
+func save(path string, stats Stats) error {
 	data, err := json.MarshalIndent(stats, "", "  ")
 	if err != nil {
 		return err
 	}
 
-	return os.WriteFile(path, data, 0o644)
-}
-
-func Reset() error {
-	path, err := statsFilePath()
+	// Rename a complete file from the same directory so unlocked readers see
+	// either the previous snapshot or the new one, never partially written JSON.
+	tmp, err := os.CreateTemp(filepath.Dir(path), ".emoji-usage-*")
 	if err != nil {
 		return err
 	}
-
-	if err := os.Remove(path); err != nil && !errors.Is(err, os.ErrNotExist) {
+	defer os.Remove(tmp.Name())
+	defer tmp.Close()
+	if err := tmp.Chmod(0o644); err != nil {
 		return err
 	}
+	if _, err := tmp.Write(data); err != nil {
+		return err
+	}
+	if err := tmp.Close(); err != nil {
+		return err
+	}
+	return os.Rename(tmp.Name(), path)
+}
 
-	return nil
+func Reset() error {
+	return withStatsLock(func(path string) error {
+		if err := os.Remove(path); err != nil && !errors.Is(err, os.ErrNotExist) {
+			return err
+		}
+		return nil
+	})
 }
 
 func (s Stats) Count(emojiChar string) int {

@@ -231,9 +231,9 @@
 				<key>script</key>
 				<string>query="$1"
 
-./alfred-emoji-picker --record "$query"
+./alfred-emoji-picker --record "$query" &gt;/dev/null
 
-echo -n "$query"</string>
+printf '%s' "$query"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -460,9 +460,9 @@ xattr -rd com.apple.quarantine ./alfred-emoji-picker &gt;/dev/null 2&gt;&amp;1 |
 				<key>script</key>
 				<string>query="$1"
 
-./alfred-emoji-picker --record "$query"
+./alfred-emoji-picker --record "$query" &gt;/dev/null
 
-echo -n "$query"</string>
+printf '%s' "$query"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
