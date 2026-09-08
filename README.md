@@ -24,6 +24,29 @@ go install
 
 Copy the executable in the Alfred workflow directory and export the new workflow from Alfred.
 
+# Frequently used emoji
+
+The binary now supports a small local usage database in Alfred's workflow data directory:
+
+- Empty query shows only emoji the user has actually selected before.
+- The amount shown on empty query is controlled by the Alfred variable `frequent_emoji_limit`.
+- When the query is empty, previously selected emoji are ordered by usage count.
+- Type `reset` in the picker and select **Reset frequent emoji** to clear the history.
+
+To reset history from a terminal, run the binary from the workflow directory and
+set `alfred_workflow_data` to the workflow's data directory:
+
+```shell
+alfred_workflow_data="$HOME/Library/Application Support/Alfred/Workflow Data/com.github.devnoname120.alfred-emoji-picker" \
+  ./alfred-emoji-picker --reset-frequent
+```
+
+Both `--reset-frequent` and `--record EMOJI` use `alfred_workflow_data` and run
+without Alfred's other environment variables. Alfred sets this directory
+automatically when running the workflow. For a custom data location, set the
+variable to that directory. Missing configuration or storage errors are reported
+on stderr with a nonzero exit status.
+
 # Update emojis
 
 1) Emoji metadata (names, slugs, keywords) lives in the [`turtle`](https://github.com/devnoname120/turtle) module. Check the README on how to regenerate `emojis.go` to make it up-to-date, and push a new tag.
@@ -40,6 +63,7 @@ Copy the executable in the Alfred workflow directory and export the new workflow
 # TODO
 
 - [x] Restore clipboard after pasting emoji
+- [x] Support frequently used emoji
 - [ ] Support for multiple words fuzzy search
 - [x] Add scoring on results (exact match > partial match at beginning > partial match > keywords, categories, etc…)
 - [x] Add scripts to update the emoji database

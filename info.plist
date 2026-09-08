@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.github.devnoname120.alfred-emoji-picker</string>
+	<key>connections</key>
+	<dict>
+		<key>3AF7AC2A-A976-48BF-BC47-85FFC9489A93</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>982E3FBB-2F4C-4046-A324-A7BF07EDCFB9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5514CC1D-FA62-4C53-ADC8-0A7E47EABE32</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>753EE7F7-6A84-4B07-9C48-1B53B2DBD393</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>715587DB-6FBB-4B61-A1E1-5DEC6AE8D9DE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8E260531-B940-414D-8222-8F44CC4B8419</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>753EE7F7-6A84-4B07-9C48-1B53B2DBD393</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>715587DB-6FBB-4B61-A1E1-5DEC6AE8D9DE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>775BB19D-DB24-45D0-8B65-72BE256BE916</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B9B62968-2D5A-448F-AFA4-55699A19A300</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B595CA76-8AE4-4B04-937A-6E3F9F77B39C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>AAF09358-216D-49FD-B955-D0AD13BF137E</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>85D92F9D-5FB7-43BB-972E-AA37378048E7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>775BB19D-DB24-45D0-8B65-72BE256BE916</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AA873DB5-AD67-4276-AB8B-B7EF039B0D8B</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy "{query}" to the clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8D669A41-E6BD-402D-82CF-16D7788A3E14</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85D92F9D-5FB7-43BB-972E-AA37378048E7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>982E3FBB-2F4C-4046-A324-A7BF07EDCFB9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8E260531-B940-414D-8222-8F44CC4B8419</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AA873DB5-AD67-4276-AB8B-B7EF039B0D8B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B595CA76-8AE4-4B04-937A-6E3F9F77B39C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>AAF09358-216D-49FD-B955-D0AD13BF137E</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3AF7AC2A-A976-48BF-BC47-85FFC9489A93</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B595CA76-8AE4-4B04-937A-6E3F9F77B39C</key>
+		<array/>
+		<key>B9B62968-2D5A-448F-AFA4-55699A19A300</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5514CC1D-FA62-4C53-ADC8-0A7E47EABE32</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>devnoname120</string>
+	<key>description</key>
+	<string>Pick emojis within Alfred — at a blazing-fast speed</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Emoji picker</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{clipboard:0}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>715587DB-6FBB-4B61-A1E1-5DEC6AE8D9DE</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>5514CC1D-FA62-4C53-ADC8-0A7E47EABE32</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="$1"
+
+./alfred-emoji-picker --record "$query" &gt;/dev/null
+
+printf '%s' "$query"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B9B62968-2D5A-448F-AFA4-55699A19A300</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>0.3</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>753EE7F7-6A84-4B07-9C48-1B53B2DBD393</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>__reset_frequent__</string>
+						<key>outputlabel</key>
+						<string>Reset frequent</string>
+						<key>uid</key>
+						<string>AAF09358-216D-49FD-B955-D0AD13BF137E</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>775BB19D-DB24-45D0-8B65-72BE256BE916</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>49</integer>
+				<key>hotmod</key>
+				<integer>1310720</integer>
+				<key>hotstring</key>
+				<string>Space</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>8D669A41-E6BD-402D-82CF-16D7788A3E14</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./alfred-emoji-picker --reset-frequent</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B595CA76-8AE4-4B04-937A-6E3F9F77B39C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>emoji</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading results...</string>
+				<key>script</key>
+				<string>query="$1"
+xattr -rd com.apple.quarantine ./alfred-emoji-picker &gt;/dev/null 2&gt;&amp;1 || true
+./alfred-emoji-picker "$query"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search emoji</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>85D92F9D-5FB7-43BB-972E-AA37378048E7</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>__reset_frequent__</string>
+						<key>outputlabel</key>
+						<string>Reset frequent</string>
+						<key>uid</key>
+						<string>AAF09358-216D-49FD-B955-D0AD13BF137E</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>AA873DB5-AD67-4276-AB8B-B7EF039B0D8B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>982E3FBB-2F4C-4046-A324-A7BF07EDCFB9</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="$1"
+
+./alfred-emoji-picker --record "$query" &gt;/dev/null
+
+printf '%s' "$query"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3AF7AC2A-A976-48BF-BC47-85FFC9489A93</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string># Based On The OneUpdater workflow, but heavily simplified for github releases
+# https://github.com/vitorgalvao/alfred-workflows/tree/master/OneUpdater
+#
+# Simplification courtesy of jsumners
+
+# THESE VARIABLES MUST BE SET.
+readonly github_repo='devnoname120/alfred-emoji-picker'
+readonly frequency_check='1' # days
+
+# FROM HERE ON, CODE SHOULD BE LEFT UNTOUCHED!
+readonly info_plist='info.plist'
+
+function abort {
+  echo "${1}" &gt;&amp;2
+  exit 1
+}
+
+function notification {
+  osascript -e "display notification \"${1}\" with title \"${alfred_workflow_name}\" subtitle \"A new version is available\""
+}
+
+function fetch_remote_version {
+  curl --silent "https://api.github.com/repos/${github_repo}/releases/latest" | grep 'tag_name' | head -1 | sed -E 's/.*tag_name": "v?(.*)".*/\1/'
+}
+
+function fetch_download_url {
+  curl --silent "https://api.github.com/repos/${github_repo}/releases/latest" | grep 'browser_download_url.*\.alfredworkflow"' | head -1 | sed -E 's/.*browser_download_url": "(.*)".*/\1/'
+}
+
+function download_and_install {
+  readonly tmpfile="$(mktemp).alfredworkflow"
+  notification 'Downloading and installing…'
+  curl --silent --location --output "${tmpfile}" "${1}"
+  open "${tmpfile}"
+}
+
+# Local sanity checks
+[[ -n "${alfred_workflow_version}" ]] || abort "'alfred_workflow_version' must be set."
+[[ -n "${alfred_workflow_name}" ]] || abort "'alfred_workflow_name' must be set."
+[[ "${github_repo}" =~ ^.+\/.+$ ]] || abort "'github_repo' (${github_repo}) must be in the format 'username/repo'."
+[[ "${frequency_check}" =~ ^[0-9]+$ ]] || abort "'frequency_check' (${frequency_check}) must be a number."
+
+# Check for updates
+if [[ $(find "${info_plist}" -mtime +"${frequency_check}"d) ]]; then
+  if [[ "${alfred_workflow_version}" == "$(fetch_remote_version)" ]]; then
+    touch "${info_plist}" # Reset timer by touching local file
+    exit 0
+  fi
+
+  download_and_install "$(fetch_download_url)"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8E260531-B940-414D-8222-8F44CC4B8419</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Emoji Picker Workflow
+
+Search and insert emoji from Alfred.
+
+## How to use
+
+- Trigger the workflow with your Alfred hotkey.
+- Or type `emoji` in Alfred to open the keyword-based search.
+- Start typing to search for an emoji by name, slug, keyword, or category.
+- Press `Enter` to paste the selected emoji into the frontmost app.
+- Use the copy modifier in the workflow to copy the selected emoji without pasting.
+
+## Frequently used emoji
+
+- Open the workflow with an empty query to see your frequently used emoji.
+- Frequent emoji are ordered by usage count.
+- The number of items shown is controlled by the `Frequent Emoji Limit` workflow setting.
+
+## Reset history
+
+- Type `reset` to show the `Reset frequent emoji` action.
+- Select it to clear the stored frequent emoji history.
+
+## Workflow settings
+
+- `Frequent Emoji Limit`
+  Controls how many frequent emoji are shown for an empty query.
+  Set it to `0` to disable the frequent emoji list.
+
+## Notes
+
+- Emoji usage history is stored in Alfred's workflow data directory.
+- The workflow supports both paste and copy-only flows.</string>
+	<key>uidata</key>
+	<dict>
+		<key>3AF7AC2A-A976-48BF-BC47-85FFC9489A93</key>
+		<dict>
+			<key>note</key>
+			<string>Record</string>
+			<key>xpos</key>
+			<real>575</real>
+			<key>ypos</key>
+			<real>400</real>
+		</dict>
+		<key>5514CC1D-FA62-4C53-ADC8-0A7E47EABE32</key>
+		<dict>
+			<key>note</key>
+			<string>Auto Paste</string>
+			<key>xpos</key>
+			<real>745</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
+		<key>715587DB-6FBB-4B61-A1E1-5DEC6AE8D9DE</key>
+		<dict>
+			<key>note</key>
+			<string>Restore clipboard</string>
+			<key>xpos</key>
+			<real>1055</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
+		<key>753EE7F7-6A84-4B07-9C48-1B53B2DBD393</key>
+		<dict>
+			<key>note</key>
+			<string>Wait for previous action to finish pasting</string>
+			<key>xpos</key>
+			<real>940</real>
+			<key>ypos</key>
+			<real>105</real>
+		</dict>
+		<key>775BB19D-DB24-45D0-8B65-72BE256BE916</key>
+		<dict>
+			<key>note</key>
+			<string>Reset or continue</string>
+			<key>xpos</key>
+			<real>390</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
+		<key>85D92F9D-5FB7-43BB-972E-AA37378048E7</key>
+		<dict>
+			<key>xpos</key>
+			<real>190</real>
+			<key>ypos</key>
+			<real>235</real>
+		</dict>
+		<key>8D669A41-E6BD-402D-82CF-16D7788A3E14</key>
+		<dict>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>235</real>
+		</dict>
+		<key>8E260531-B940-414D-8222-8F44CC4B8419</key>
+		<dict>
+			<key>note</key>
+			<string>Auto Update - remove to disable</string>
+			<key>xpos</key>
+			<real>1055</real>
+			<key>ypos</key>
+			<real>400</real>
+		</dict>
+		<key>982E3FBB-2F4C-4046-A324-A7BF07EDCFB9</key>
+		<dict>
+			<key>note</key>
+			<string>Only copy to clipboard</string>
+			<key>xpos</key>
+			<real>745</real>
+			<key>ypos</key>
+			<real>400</real>
+		</dict>
+		<key>AA873DB5-AD67-4276-AB8B-B7EF039B0D8B</key>
+		<dict>
+			<key>note</key>
+			<string>Reset or continue</string>
+			<key>xpos</key>
+			<real>390</real>
+			<key>ypos</key>
+			<real>335</real>
+		</dict>
+		<key>B595CA76-8AE4-4B04-937A-6E3F9F77B39C</key>
+		<dict>
+			<key>note</key>
+			<string>Reset frequent emoji</string>
+			<key>xpos</key>
+			<real>575</real>
+			<key>ypos</key>
+			<real>235</real>
+		</dict>
+		<key>B9B62968-2D5A-448F-AFA4-55699A19A300</key>
+		<dict>
+			<key>note</key>
+			<string>Record</string>
+			<key>xpos</key>
+			<real>575</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>defaultvalue</key>
+				<integer>10</integer>
+				<key>markercount</key>
+				<integer>11</integer>
+				<key>maxvalue</key>
+				<integer>100</integer>
+				<key>minvalue</key>
+				<integer>0</integer>
+				<key>onlystoponmarkers</key>
+				<false/>
+				<key>showmarkers</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Maximum number of frequently used emoji to show when the query is empty. Set to 0 to disable.</string>
+			<key>label</key>
+			<string>Frequent Emoji Limit</string>
+			<key>type</key>
+			<string>slider</string>
+			<key>variable</key>
+			<string>frequent_emoji_limit</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>1.6</string>
+	<key>webaddress</key>
+	<string>https://github.com/devnoname120/alfred-emoji-picker</string>
+</dict>
+</plist>

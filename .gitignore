@@ -6,3 +6,4 @@ main_amd64
 main_arm64
 scripts/*.egg-info/
 scripts/build/
+.gocache
